@@ -1,0 +1,33 @@
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        Animal lion = new Animal("lion","simba",5,true);
+        Animal elephant = new Animal("elephant", "bomba", 12, true);
+        Animal cobra = new Animal("serpentes", "moufasa", 3, false);
+        Animal tortue = new Animal("tortue", "touta", 5, false);
+        Zoo myZoo=new Zoo ("belvider","tunis",25);
+        Zoo Zo1=new Zoo ("afric","sousse",10);
+        Zoo Zo2=new Zoo ("boooo","hammamet",10);
+        System.out.println(myZoo);
+        System.out.println(myZoo.toString());
+
+        System.out.println(myZoo.addAnimal(elephant));
+        System.out.println(myZoo.addAnimal(cobra));
+        System.out.println(myZoo.addAnimal(tortue));
+        myZoo.afficher_animals();
+        System.out.println("Indice du  "+lion.getName() + ": "+ + myZoo.searchAnimal(lion.getName()));
+        myZoo.removeAnimal("bomba");
+        myZoo.afficher_animals();
+        System.out.println("Zoo plein  " + myZoo.isFull());
+        Zoo plusGrand = Zoo.compareZoo(Zo1, Zo2);
+        System.out.println("Le zoo avec le plus d’animaux est : " + plusGrand.getName());
+
+
+
+
+    }
+}
